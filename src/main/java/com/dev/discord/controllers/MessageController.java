@@ -22,7 +22,11 @@ public class MessageController {
     //Aqui esta para guardar un mensaje programado
     @PostMapping
     public ResponseEntity<Message> createMessage(@Valid @RequestBody Message message){
-        return ResponseEntity.ok(messageRepository.save(message));
+
+        Message savedMessage = messageRepository.save(message);
+        System.out.println("📌 Mensaje guardado: " + savedMessage.getText() + " a las " + savedMessage.getScheduledDate());
+
+        return ResponseEntity.ok(savedMessage);
     }
 
     //Obtener la lista de mensajes programados

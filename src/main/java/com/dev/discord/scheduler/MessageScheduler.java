@@ -4,11 +4,12 @@ import com.dev.discord.models.Message;
 import com.dev.discord.repository.MessageRepository;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Component
+@Service
 public class MessageScheduler {
     private final MessageRepository messageRepository;
 
@@ -16,13 +17,23 @@ public class MessageScheduler {
         this.messageRepository = messageRepository;
     }
 
-    @Scheduled(fixedRate = 60000)
+    //Para mayor precision ***   @Scheduled(cron = "0 * * * * *")
+    //@Scheduled(fixedRate = 60000)
+    @Scheduled(cron = "0 * * * * *")
     public void sendScheduledMessages(){
-        List<Message> messageToSend = messageRepository.findByScheduledDateBefore(LocalDateTime.now());
+        LocalDateTime now = LocalDateTime.now();
+        List<Message> messagesToSend = messageRepository.findByScheduledDateBefore(now);
 
-        for(Message message : messageToSend){
-            System.out.println("Enviando mensaje programado: " + message.getText());
-            messageRepository.delete(message);
+        System.out.println("⏰ Verificando mensajes programados para: " + now);
+
+        if(messagesToSend.isEmpty()){
+            System.out.println("✅ No hay mensajes para enviar en este momento.");
+        } else {
+            for(Message message : messagesToSend){
+                System.out.println("✅ Enviando mensaje programado: " + message.getText() + " a las " + message.getScheduledDate());
+                messageRepository.delete(message);
+            }
         }
     }
+
 }
