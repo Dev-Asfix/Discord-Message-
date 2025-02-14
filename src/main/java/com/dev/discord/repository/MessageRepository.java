@@ -1,0 +1,11 @@
+package com.dev.discord.repository;
+
+import com.dev.discord.models.Message;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+public interface MessageRepository extends JpaRepository<Message, Long> {
+    List<Message> findByScheduledDateBefore(LocalDateTime now);
+}

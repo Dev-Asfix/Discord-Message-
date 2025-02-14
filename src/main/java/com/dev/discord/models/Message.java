@@ -23,5 +23,5 @@ public class Message {
     private String text;
 
     @Future(message = "La fecha debe ser en el futuro")
-    private LocalDateTime scheduleDate;
+    private LocalDateTime scheduledDate;
 }
