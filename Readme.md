@@ -87,15 +87,19 @@ mvn spring-boot:run
 
 ---
 
-## 📜 Endpoints principales
 
-| Método | Endpoint | Descripción                           |
-|--------|---------|---------------------------------------|
-| `POST` | `/message` | Crea un mensaje programado            |
-| `GET` | `/messages` | Lista todos los mensajes programados  |
-| `PUT`   | `/message/{id}` | Actualiza un mensaje programado        |
-| `DELETE` | `/message/{id}` | Elimina un mensaje programado         |
-| `GET`   | `/home`      | Muestra una interfaz usando Thymeleaf |
+
+## 📌 Endpoints de la API
+
+| Método   | Endpoint         | Descripción                           |
+|----------|-----------------|---------------------------------------|
+| 🟢 `POST`   | `/message`       | Crea un mensaje programado            |
+| 🔵 `GET`    | `/messages`      | Lista todos los mensajes programados  |
+| 🟣 `PUT`    | `/message/{id}`  | Actualiza un mensaje programado       |
+| 🔴 `DELETE` | `/message/{id}`  | Elimina un mensaje programado         |
+| 🟡 `GET`    | `/home`         | Muestra una interfaz usando Thymeleaf |
+
+
 
 Puedes probar la API con **Swagger UI** accediendo a:
 ```
