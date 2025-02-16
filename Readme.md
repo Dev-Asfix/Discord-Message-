@@ -1,12 +1,35 @@
 
 <div align="center">
-  <img src="images/alumni.png" alt="Logo" height="100" style="border-radius: 50%;">
+  <img src="images/alumni-one.png" alt="Logo" height="100" style="border-radius: 50%;">
   <h2>
     🌐Discord Message Scheduler 📩
   </h2>
 </div>
 
 Este proyecto es un servicio backend desarrollado con **Spring Boot**, que permite **programar y gestionar mensajes automáticos en Discord**. Utiliza **JDA** para la interacción con Discord, **Spring Boot** para la gestión del backend y **MySQL** como base de datos.
+
+<!-- Tabla para organizar imágenes -->
+<table width="100%">
+  <!-- Fila superior: Imagen grande (info.png) -->
+  <tr>
+    <td colspan="2" align="center">
+      <img src="images/info.png" alt="Swagger UI" width="80%">
+    </td>
+  </tr>
+  <!-- Fila inferior: Dos imágenes alineadas a la izquierda y derecha -->
+  <tr>
+    <td align="left">
+      <img src="images/notifica.png" alt="Notificación" width="100%">
+    </td>
+    <td align="right">
+      <img src="images/discord.png" alt="Discord Logo" width="100%">
+    </td>
+  </tr>
+</table>
+
+
+
+
 
 ## 🚀 Características
 
@@ -86,7 +109,12 @@ Puedes probar la API con **Swagger UI** accediendo a:
 http://localhost:8080/swagger-ui/index.html
 ```
 
+<p align="center">
+  <img src="images/doc.png" alt="Swagger UI" width="100%">
+</p>
+
 ---
+
 
 ## ⚙️ Tecnologías utilizadas
 - **Spring Boot 3.4.2**
