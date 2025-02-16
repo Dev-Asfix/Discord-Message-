@@ -93,6 +93,7 @@ mvn spring-boot:run
 |--------|---------|---------------------------------------|
 | `POST` | `/message` | Crea un mensaje programado            |
 | `GET` | `/messages` | Lista todos los mensajes programados  |
+| `PUT`   | `/message/{id}` | Actualiza un mensaje programado        |
 | `DELETE` | `/message/{id}` | Elimina un mensaje programado         |
 | `GET`   | `/home`      | Muestra una interfaz usando Thymeleaf |
 
