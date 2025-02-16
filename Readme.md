@@ -69,8 +69,8 @@ CREATE DATABASE discorddb;
 Asegúrate de configurar correctamente las credenciales en `application.properties`:
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3307/discorddb?serverTimezone=America/Lima
-spring.datasource.username=root
-spring.datasource.password=admin
+spring.datasource.username=${USER}
+spring.datasource.password=${PASSWORD}
 ```
 
 ### 3️⃣ Configurar las variables de entorno
