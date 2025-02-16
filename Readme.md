@@ -13,7 +13,7 @@ Este proyecto es un servicio backend desarrollado con **Spring Boot**, que permi
   <!-- Fila superior: Imagen grande (info.png) -->
   <tr>
     <td colspan="2" align="center">
-      <img src="images/info.png" alt="Swagger UI" width="80%">
+      <img src="images/info.png" alt="Swagger UI" width="100%">
     </td>
   </tr>
   <!-- Fila inferior: Dos imágenes alineadas a la izquierda y derecha -->
@@ -108,10 +108,15 @@ Puedes probar la API con **Swagger UI** accediendo a:
 ```
 http://localhost:8080/swagger-ui/index.html
 ```
+<table width="100%">
+  <tr>
+    <td colspan="2" align="center">
+      <img src="images/doc.png" alt="Swagger UI" width="80%">
+    </td>
+  </tr>
+</table>
 
-<p align="center">
-  <img src="images/doc.png" alt="Swagger UI" width="100%">
-</p>
+
 
 ---
 
