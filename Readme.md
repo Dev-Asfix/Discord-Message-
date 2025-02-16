@@ -42,7 +42,6 @@ Este proyecto es un servicio backend desarrollado con **Spring Boot**, que permi
 - 🎨 **Interfaz moderna y responsive** desarrollada con `HTML` y `CSS`.
 - 🔄 **Renderización dinámica** de datos con `Thymeleaf`.
 ---
-
 <div align="center">
 
 </div>
@@ -105,11 +104,51 @@ http://localhost:8080/swagger-ui/index.html
 </table>
 
 
+## 🚀 Servicios  
+
+### 📌 `MessageScheduler.java`
+Este servicio se encarga de:
+- Buscar mensajes programados cuya fecha ya ha pasado.
+- Enviarlos al canal de Discord usando `DiscordService`.
+- Eliminar los mensajes enviados de la base de datos.
+
+📌 **Método clave:**
+```java
+@Scheduled(cron = "0 * * * * *")
+@Transactional
+public void sendScheduledMessages()
+```
+🔹 Se ejecuta cada minuto y verifica si hay mensajes que deben enviarse.  
+🔹 Usa discordService.sendMessage() para enviarlos y los elimina tras su envío.
 
 ---
 
+<table width="100%">
+  <tr>
+    <td colspan="2" align="center">
+      <img src="images/jda.png" alt="Swagger UI" width="95%">
+    </td>
+  </tr>
+</table>
 
-## ⚙️ Tecnologías utilizadas
+## 🤖 DiscordService.java
+Este servicio gestiona la conexión con Discord usando JDA (Java Discord API).
+
+### 📌 `MessageScheduler.java`
+Características::
+- Autenticación: Usa el token del bot almacenado en application.properties.
+- Envío de mensajes: Envía mensajes al canal configurado.
+
+📌 **Método clave:**
+```java
+public void sendMessage(String message)
+```
+🔹 Obtiene el canal de Discord por su ID y envía el mensaje.
+
+---
+
+## ⚙️ Tecnologías utilizadas   
+
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" height="40" alt="Spring Logo" />
