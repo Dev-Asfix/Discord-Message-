@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="./src/main/resources/img/Badge-Spring.png" alt="Logo" height="100">
+  <img src="images/alumni.png" alt="Logo" height="100" style="border-radius: 50%;">
   <h2>
     🌐Discord Message Scheduler 📩
   </h2>
@@ -15,13 +15,12 @@ Este proyecto es un servicio backend desarrollado con **Spring Boot**, que permi
 - 📝 **Validaciones** con `Jakarta Validation` para garantizar datos correctos.
 - 🌐 **API REST** documentada con `Swagger`.
 - 🔧 **Configuración flexible** con variables de entorno y `application.properties`.
-
+- 🎨 **Interfaz moderna y responsive** desarrollada con `HTML` y `CSS`.
+- 🔄 **Renderización dinámica** de datos con `Thymeleaf`.
 ---
 
 <div align="center">
-<h2>
-🔧 Tecnologías Usadas
-</h2>
+
 </div>
 
 <div align="center">
