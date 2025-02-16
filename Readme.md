@@ -56,8 +56,8 @@ Este proyecto es un servicio backend desarrollado con **Spring Boot**, que permi
 
 ### 1️⃣ Clonar el repositorio
 ```sh
- git clone https://github.com/tuusuario/discord-message-scheduler.git
- cd discord-message-scheduler
+ git clone https://github.com/Dev-Asfix/Discord-Message.git
+ cd Discord-Message
 ```
 
 ### 2️⃣ Configurar la base de datos MySQL
