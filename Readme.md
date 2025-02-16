@@ -1,4 +1,10 @@
-# Discord Message Scheduler 📩
+
+<div align="center">
+  <img src="./src/main/resources/img/Badge-Spring.png" alt="Logo" height="100">
+  <h2>
+    🌐Discord Message Scheduler 📩
+  </h2>
+</div>
 
 Este proyecto es un servicio backend desarrollado con **Spring Boot**, que permite **programar y gestionar mensajes automáticos en Discord**. Utiliza **JDA** para la interacción con Discord, **Spring Boot** para la gestión del backend y **MySQL** como base de datos.
 
@@ -11,6 +17,27 @@ Este proyecto es un servicio backend desarrollado con **Spring Boot**, que permi
 - 🔧 **Configuración flexible** con variables de entorno y `application.properties`.
 
 ---
+
+<div align="center">
+<h2>
+🔧 Tecnologías Usadas
+</h2>
+</div>
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" height="40" alt="Spring Logo" />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" height="40" alt="IntelliJ Logo" />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="40" alt="Java Logo" />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="40" alt="Git Logo" />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="40" alt="MySQL Logo" />
+  <img width="12" />
+
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" height="40" alt="GitHub Logo" />
+</div>
 
 ## 📦 Instalación
 
@@ -90,7 +117,8 @@ Este proyecto está licenciado bajo **Apache 2.0**. Puedes ver más detalles en 
 ## 🛠 Mantenimiento y contacto
 **Autor:** Pablo Aldair Rosas Ramírez  
 📧 Email: [rosasramirez753@gmail.com](mailto:rosasramirez753@gmail.com)  
-🔗 GitHub: [Dev Asfix](https://github.com/tuusuario)
+🔗 GitHub: [Dev Asfix](https://github.com/Dev-Asfix)  
+💼 LinkedIn: [Pablo Rosas Ramirez](https://www.linkedin.com/in/pablo-rosas-dev/)
 
 ---
 
