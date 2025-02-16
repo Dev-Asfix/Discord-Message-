@@ -40,6 +40,7 @@ async function loadMessages() {
             <td>${msg.scheduledDate}</td>
             <td>
                 <button class="delete-btn" onclick="deleteMessage(${msg.id})">Eliminar</button>
+
             </td>
         `;
 
@@ -61,6 +62,10 @@ async function deleteMessage(id) {
         showNotification("Error al eliminar el mensaje", "error");
     }
 }
+
+
+
+
 
 function showNotification(message, type) {
     const notificationContainer = document.getElementById("notificationContainer");

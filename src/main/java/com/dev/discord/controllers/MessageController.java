@@ -54,4 +54,25 @@ public class MessageController {
         messageRepository.deleteById(id);
         return ResponseEntity.ok("Mensaje eliminado correctamente.");
     }
+
+    @PutMapping("/message/{id}")
+    public ResponseEntity<?> updateMessage(
+            @PathVariable Long id,
+            @Valid @RequestBody DatosRegistroMensaje updatedMessage) {
+
+        Optional<Message> optionalMessage = messageRepository.findById(id);
+        if (optionalMessage.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Mensaje no encontrado");
+        }
+
+        Message existingMessage = optionalMessage.get();
+        existingMessage.setText(updatedMessage.text());
+        existingMessage.setScheduledDate(updatedMessage.scheduledDate());
+
+        Message savedMessage = messageRepository.save(existingMessage);
+        System.out.println("📌 Mensaje actualizado: " + savedMessage.getText() + " a las " + savedMessage.getScheduledDate());
+
+        return ResponseEntity.ok(savedMessage);
+    }
+
 }
