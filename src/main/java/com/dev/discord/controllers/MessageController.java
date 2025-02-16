@@ -1,5 +1,7 @@
 package com.dev.discord.controllers;
 
+import com.dev.discord.models.DatosListaMensajes;
+import com.dev.discord.models.DatosRegistroMensaje;
 import com.dev.discord.models.Message;
 import com.dev.discord.repository.MessageRepository;
 import jakarta.validation.Valid;
@@ -21,8 +23,9 @@ public class MessageController {
 
     //Aqui esta para guardar un mensaje programado
     @PostMapping
-    public ResponseEntity<Message> createMessage(@Valid @RequestBody Message message){
+    public ResponseEntity<Message> createMessage(@Valid @RequestBody DatosRegistroMensaje messagedto){
 
+        Message message = new Message(messagedto);
         Message savedMessage = messageRepository.save(message);
         System.out.println("📌 Mensaje guardado: " + savedMessage.getText() + " a las " + savedMessage.getScheduledDate());
 
@@ -31,8 +34,11 @@ public class MessageController {
 
     //Obtener la lista de mensajes programados
     @GetMapping
-    public List<Message> getAllMessages(){
-        return messageRepository.findAll();
+    public List<DatosListaMensajes> getAllMessages(){
+        return messageRepository.findAll()
+                .stream()
+                .map(DatosListaMensajes::new)
+                .toList();
     }
 
     @DeleteMapping("/{id}")
