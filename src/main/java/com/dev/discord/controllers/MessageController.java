@@ -5,6 +5,7 @@ import com.dev.discord.models.DatosRegistroMensaje;
 import com.dev.discord.models.Message;
 import com.dev.discord.repository.MessageRepository;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +24,12 @@ public class MessageController {
 
     //Aqui esta para guardar un mensaje programado
     @PostMapping
-    public ResponseEntity<Message> createMessage(@Valid @RequestBody DatosRegistroMensaje messagedto){
+    public ResponseEntity<?> createMessage(@Valid @RequestBody DatosRegistroMensaje messagedto){
+
+        boolean exists = messageRepository.existsByTextAndScheduledDate(messagedto.text(), messagedto.scheduledDate());
+        if(exists){
+            return ResponseEntity.badRequest().body("Ya existe un mensaje programado con este contenido y fecha.");
+        }
 
         Message message = new Message(messagedto);
         Message savedMessage = messageRepository.save(message);
@@ -43,11 +49,10 @@ public class MessageController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteMessage(@PathVariable Long id){
-        Optional<Message> message = messageRepository.findById(id);
-        if(message.isPresent()){
-            messageRepository.deleteById(id);
-            return ResponseEntity.ok("Mensaje eliminado correctamente");
+        if(!messageRepository.existsById(id)){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Mensaje no encontrado");
         }
-        return ResponseEntity.notFound().build();
+        messageRepository.deleteById(id);
+        return ResponseEntity.ok("Mensaje elimiado correctamente.");
     }
 }
