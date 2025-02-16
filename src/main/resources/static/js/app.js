@@ -17,11 +17,11 @@ document.getElementById("messageForm").addEventListener("submit", async function
     });
 
     if (response.ok) {
-        alert("Mensaje guardado correctamente.");
+        showNotification("Mensaje guardado correctamente", "success");
         loadMessages();
         document.getElementById("messageForm").reset();
     } else {
-        alert("Error al guardar el mensaje.");
+        showNotification("Error al guardar el mensaje", "error");
     }
 });
 
@@ -55,9 +55,22 @@ async function deleteMessage(id) {
     });
 
     if (response.ok) {
-        alert("Mensaje eliminado correctamente.");
+        showNotification("Mensaje eliminado correctamente", "success");
         loadMessages();
     } else {
-        alert("Error al eliminar el mensaje.");
+        showNotification("Error al eliminar el mensaje", "error");
     }
+}
+
+function showNotification(message, type) {
+    const notificationContainer = document.getElementById("notificationContainer");
+    const notification = document.createElement("div");
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    notificationContainer.appendChild(notification);
+
+    setTimeout(() => {
+        notification.classList.add("fade-out");
+        setTimeout(() => notification.remove(), 500);
+    }, 3000);
 }

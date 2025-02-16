@@ -134,15 +134,16 @@ button:hover {
 /* Personalización de la barra de desplazamiento */
 .messages-container::-webkit-scrollbar {
     width: 8px; /* Grosor de la barra */
+    color : black;
 }
 
 .messages-container::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.5); /* Color del scroll */
+    background: rgba(0,0,0, 0.2); /* Color del scroll */
     border-radius: 10px;
 }
 
 .messages-container::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1); /* Fondo del scroll */
+    background: rgba(6,6,6, 0.2); /* Fondo del scroll */
 }
 
 /* Asegurar que la tabla no rompa el diseño */
@@ -228,4 +229,23 @@ table th {
         font-size: 14px;
         padding: 10px;
     }
+}
+
+.notifications {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+.notification {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    transition: opacity 0.5s ease-in-out;
+}
+.notification.error {
+    background: #f44336;
 }
