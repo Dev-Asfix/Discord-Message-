@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Mensajes</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script defer th:src="@{/js/app.js}"></script>
+
+</head>
+<body>
+
+<div class="dashboard">
+    <aside class="sidebar">
+        <h2>Panel</h2>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Mensajes</a></li>
+            <li><a href="#">Configuración</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <header>
+            <h1>Gestión de Mensajes Programados</h1>
+        </header>
+
+        <section class="form-container">
+            <h2>Nuevo Mensaje</h2>
+            <form id="messageForm">
+                <label for="text">Mensaje:</label>
+                <input type="text" id="text" name="text" required>
+
+                <label for="scheduledDate">Fecha programada:</label>
+                <input type="datetime-local" id="scheduledDate" name="scheduledDate" required>
+
+                <button type="submit">Guardar Mensaje</button>
+            </form>
+        </section>
+
+        <section class="messages-container">
+            <h2>Mensajes Programados</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Mensaje</th>
+                    <th>Fecha Programada</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody id="messagesTable">
+                <!-- Se cargarán los mensajes aquí -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
