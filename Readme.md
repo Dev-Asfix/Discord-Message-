@@ -17,23 +17,20 @@ Este proyecto es un servicio backend desarrollado con **Spring Boot**, que permi
 
 <!-- Tabla para organizar imágenes -->
 <table width="100%">
-  <!-- Fila superior: Imagen grande (info.png) -->
   <tr>
-    <td colspan="2" align="center">
-      <img src="images/info.png" alt="Swagger UI" width="100%">
+    <!-- Columna izquierda: Imagen de información -->
+    <td align="left" width="60%">
+      <img src="images/info.png" alt="Información" width="100%">
     </td>
-  </tr>
-
-  <!-- Fila inferior: Dos imágenes alineadas a la izquierda y derecha -->
-  <tr>
-    <td align="left">
+    <td align="right" width="60%">
       <img src="images/notifica.png" alt="Notificación" width="100%">
-    </td>
-    <td align="right">
+      <br><br>
       <img src="images/discord.png" alt="Discord Logo" width="100%">
     </td>
   </tr>
 </table>
+
+
 
 
 
