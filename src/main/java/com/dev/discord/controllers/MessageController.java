@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api/messages")
 public class MessageController {
 
     private final MessageRepository messageRepository;
@@ -23,7 +22,7 @@ public class MessageController {
     }
 
     //Aqui esta para guardar un mensaje programado
-    @PostMapping
+    @PostMapping("/message")
     public ResponseEntity<?> createMessage(@Valid @RequestBody DatosRegistroMensaje messagedto){
 
         boolean exists = messageRepository.existsByTextAndScheduledDate(messagedto.text(), messagedto.scheduledDate());
@@ -39,7 +38,7 @@ public class MessageController {
     }
 
     //Obtener la lista de mensajes programados
-    @GetMapping
+    @GetMapping("/messages")
     public List<DatosListaMensajes> getAllMessages(){
         return messageRepository.findAll()
                 .stream()
@@ -47,12 +46,12 @@ public class MessageController {
                 .toList();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/message/{id}")
     public ResponseEntity<String> deleteMessage(@PathVariable Long id){
         if(!messageRepository.existsById(id)){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Mensaje no encontrado");
         }
         messageRepository.deleteById(id);
-        return ResponseEntity.ok("Mensaje elimiado correctamente.");
+        return ResponseEntity.ok("Mensaje eliminado correctamente.");
     }
 }

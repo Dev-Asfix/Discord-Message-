@@ -1,3 +1,5 @@
+const API_URL = "http://localhost:8080";
+
 document.addEventListener("DOMContentLoaded", () => {
     loadMessages();
 });
@@ -8,7 +10,7 @@ document.getElementById("messageForm").addEventListener("submit", async function
     const text = document.getElementById("text").value;
     const scheduledDate = document.getElementById("scheduledDate").value;
 
-    const response = await fetch("/api/messages", {
+    const response = await fetch(`${API_URL}/message`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text, scheduledDate })
@@ -24,7 +26,7 @@ document.getElementById("messageForm").addEventListener("submit", async function
 });
 
 async function loadMessages() {
-    const response = await fetch("/api/messages");
+    const response = await fetch(`${API_URL}/messages`);
     const messages = await response.json();
     const table = document.getElementById("messagesTable");
     table.innerHTML = "";
@@ -48,7 +50,7 @@ async function loadMessages() {
 async function deleteMessage(id) {
     if (!confirm("¿Estás seguro de eliminar este mensaje?")) return;
 
-    const response = await fetch(`/api/messages/${id}`, {
+    const response = await fetch(`${API_URL}/message/${id}`, {
         method: "DELETE",
     });
 

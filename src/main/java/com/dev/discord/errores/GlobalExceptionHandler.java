@@ -19,7 +19,7 @@ public class GlobalExceptionHandler {
         response.put("timestamp", LocalDateTime.now());
         response.put("status", HttpStatus.BAD_REQUEST.value());
         response.put("error", "Bad Request");
-        response.put("path", "/api/messages");
+        response.put("path", "/message");
 
 
         Map<String, String> errors = new HashMap<>();
@@ -39,7 +39,7 @@ public class GlobalExceptionHandler {
         response.put("status", HttpStatus.BAD_REQUEST.value());
         response.put("error", "Bad Request");
         response.put("message", "Error al procesar el JSON. Verifica la estructura y los valores enviados.");
-        response.put("path", "/api/messages");
+        response.put("path", "/message");
 
         return ResponseEntity.badRequest().body(response);
     }

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ViewMessageController {
 
-    @GetMapping("/messages")
+    @GetMapping("/home")
     public String showPage(){
         return "messages";
     }
