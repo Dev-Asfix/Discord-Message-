@@ -4,6 +4,13 @@
   <h2>
     🌐Discord Message Scheduler 📩
   </h2>
+
+<p align="center">
+    <!-- Insignias para Discord-Message con color morado -->
+    <a href="https://github.com/Dev-Asfix/Discord-Message?tab=License-1-ov-file"><img src="https://img.shields.io/github/license/Dev-Asfix/Foro-Hub?style=for-the-badge" alt="License"></a>
+    <a href="https://github.com/Dev-Asfix/Discord-Message/issues"><img src="https://img.shields.io/github/issues/Dev-Asfix/Discord-Message?style=for-the-badge&color=8A2BE2" alt="Open Issues"></a>
+    <a href="https://github.com/Dev-Asfix/Discord-Message/graphs/contributors"><img src="https://img.shields.io/github/contributors/Dev-Asfix/Discord-Message?style=for-the-badge&color=8A2BE2" alt="Contributors"></a>
+</p>
 </div>
 
 Este proyecto es un servicio backend desarrollado con **Spring Boot**, que permite **programar y gestionar mensajes automáticos en Discord**. Utiliza **JDA** para la interacción con Discord, **Spring Boot** para la gestión del backend y **MySQL** como base de datos.
@@ -85,11 +92,12 @@ mvn spring-boot:run
 
 ## 📜 Endpoints principales
 
-| Método | Endpoint | Descripción |
-|--------|---------|-------------|
-| `POST` | `/message` | Crea un mensaje programado |
-| `GET` | `/messages` | Lista todos los mensajes programados |
-| `DELETE` | `/message/{id}` | Elimina un mensaje programado |
+| Método | Endpoint | Descripción                           |
+|--------|---------|---------------------------------------|
+| `POST` | `/message` | Crea un mensaje programado            |
+| `GET` | `/messages` | Lista todos los mensajes programados  |
+| `DELETE` | `/message/{id}` | Elimina un mensaje programado         |
+| `GET`   | `/home`      | Muestra una interfaz usando Thymeleaf |
 
 Puedes probar la API con **Swagger UI** accediendo a:
 ```
@@ -116,7 +124,7 @@ Este servicio se encarga de:
 ```java
 @Scheduled(cron = "0 * * * * *")
 @Transactional
-public void sendScheduledMessages()
+public void sendScheduledMessages();
 ```
 🔹 Se ejecuta cada minuto y verifica si hay mensajes que deben enviarse.  
 🔹 Usa discordService.sendMessage() para enviarlos y los elimina tras su envío.
@@ -141,7 +149,7 @@ Características::
 
 📌 **Método clave:**
 ```java
-public void sendMessage(String message)
+public void sendMessage(String message);
 ```
 🔹 Obtiene el canal de Discord por su ID y envía el mensaje.
 
